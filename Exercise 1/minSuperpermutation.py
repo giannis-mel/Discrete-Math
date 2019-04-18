@@ -224,7 +224,7 @@ else :
     # combinations has all the permutations in the variable newString
     # and perms has all the permutations from the sequence 1...n
     combinations = splitter(newString)
-    result =  all(elem in combinations for elem in perms)
+    result =  set(perms).issubset(combinations) #all(elem in combinations for elem in perms)
     if result : print('All permutations are in the string!')
     else : print('All permutations are not in the string!')
     
